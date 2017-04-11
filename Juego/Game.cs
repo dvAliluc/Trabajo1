@@ -12,11 +12,11 @@ namespace Game
 
         private Random G = new Random();
         private Personaje player1 = new Personaje();
-        private Personaje player2 = new Personaje();//agrego
+        private Personaje player2 = new Personaje();
         private Enemigos[] Enem = new Enemigos[5];
         private Obstaculo[] Obst = new Obstaculo[20];
 
-        //Creadores
+        
         public void Iniciar()
         { 
             for (int i = 0; i<Enem.Length; i++)
@@ -39,7 +39,7 @@ namespace Game
                 Console.SetCursorPosition(35, 12);
             Console.WriteLine("[1] EMPEZAR JUEGO    [2] MULTIPLAYER   [3] EXIT");
                 Console.SetCursorPosition(60, 14);
-                //Chequeo de error
+                
 
                 try
                 {
@@ -64,10 +64,10 @@ namespace Game
                 }
                 System.Threading.Thread.Sleep(0);
                 Console.Clear();
-                //Elecciones
+                
                 switch (e)
                 {
-                    //Inicio Juego
+                    
                     case 1:
                         Console.SetCursorPosition(49, 10);
                         Console.WriteLine("MOVIMIENTO: FLECHAS");
@@ -95,7 +95,7 @@ namespace Game
                             }
                             player1.Show();
 
-                            //cki = Console.ReadKey();
+                            
                             if (Console.KeyAvailable)
                             {
                                 userKey = Console.ReadKey(true);
@@ -276,7 +276,7 @@ namespace Game
                             Console.Clear();
                         }
                         break;
-                    //Creditos
+                    
                     case 3:
                         Console.Clear();
                         startgame = false;
