@@ -1,9 +1,13 @@
 ﻿using System;
-
+using System.IO;
 namespace Game
 {
     class Game
     {
+
+        
+
+        
         private bool startgame = true;
         private int e = 1;
         private char p1 = 'X', p2 = 'Y', obs = '■', en = '<';   
@@ -18,7 +22,17 @@ namespace Game
 
         
         public void Iniciar()
-        { 
+        {
+            if (File.Exists("intro.lol") != true)
+            {
+                Console.SetCursorPosition(30, 8);
+                Console.WriteLine("BIENVENIDO, POR FAVOR ESCRIBIR TU ELECCIÓN Y APRETAR ENTER");
+                FileStream fils = File.Create("intro.lol");
+                StreamWriter sw = new StreamWriter(fils);
+                sw.Close();
+                fils.Close();
+            }
+
             for (int i = 0; i<Enem.Length; i++)
                     Enem[i] = new Enemigos();
                     

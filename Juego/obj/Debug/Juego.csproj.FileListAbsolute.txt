@@ -7,3 +7,6 @@ C:\Users\Lucas\Desktop\Proyect-WIP-master\Programa1\Juego\obj\Debug\Juego.pdb
 C:\Users\822\Desktop\Trabajo1\Juego\bin\Debug\Juego.exe.config
 C:\Users\822\Desktop\Trabajo1\Juego\obj\Debug\Juego.exe
 C:\Users\822\Desktop\Trabajo1\Juego\obj\Debug\Juego.pdb
+C:\Users\822\Desktop\Trabajo1\Juego\bin\Debug\Juego.exe
+C:\Users\822\Desktop\Trabajo1\Juego\bin\Debug\Juego.pdb
+C:\Users\822\Desktop\Trabajo1\Juego\obj\Debug\Juego.csprojResolveAssemblyReference.cache
