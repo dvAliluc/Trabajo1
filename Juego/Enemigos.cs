@@ -7,7 +7,7 @@ namespace Game
         private int pX;
         private int pY;
         private char Char;
-
+        private bool vi=true;
 
         public void Start(int _x, int _y, char pj)
         {
@@ -19,13 +19,10 @@ namespace Game
         {
             Console.SetCursorPosition(pX, pY);
             Console.WriteLine(Char);
-
-
         }
         public void setChar(char ch)
         {
             Char = ch;
-
         }
         public void setPosX(int X)
         {
@@ -35,36 +32,32 @@ namespace Game
         {
             pY = Y;
         }
-
         public int getPosX()
         {
             return pX;
         }
         public int getPosY()
         {
-
             return pY;
         }
-        public void MoveLeft()
+
+        public void Movement()
         {
-            if (pX== 0)
-            {
-                pX=118;
-            }
-            else
+            if (vi == true)
             {
                 pX -= 1;
+                if (pX == 0)
+                {
+                    vi = false;
+                }
             }
-        }
-        public void MoveRight()
-        {
-            if (pX == 118)
-            {
-                pX = 1;
-            }
-            else
+            if (vi == false)
             {
                 pX += 1;
+                if (pX == 118)
+                {
+                    vi = true;
+                }
             }
         }
         public void MoveUp()
@@ -83,11 +76,6 @@ namespace Game
             }
             pY += 1;
         }
-        
-        
-
-
-
     }
 }
 

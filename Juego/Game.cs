@@ -10,14 +10,14 @@ namespace Game
         
         private bool startgame = true;
         private int e = 1;
-        private char p1 = 'X', p2 = 'Y', obs = '■', en = '<';   
+        private char p1 = 'O', p2 = 'Y', obs = '■', en = 'M';   
 
         private ConsoleKeyInfo userKey;
 
         private Random G = new Random();
         private Personaje player1 = new Personaje();
         private Personaje player2 = new Personaje();
-        private Enemigos[] Enem = new Enemigos[5];
+        private Enemigos[] Enem = new Enemigos[10];
         private Obstaculo[] Obst = new Obstaculo[20];
 
         
@@ -27,7 +27,7 @@ namespace Game
             {
                 Console.SetCursorPosition(30, 8);
                 Console.WriteLine("BIENVENIDO, POR FAVOR ESCRIBIR TU ELECCIÓN Y APRETAR ENTER");
-                FileStream fils = File.Create("intro.lol");
+                FileStream fils = File.Create("intro.txt");
                 StreamWriter sw = new StreamWriter(fils);
                 sw.Close();
                 fils.Close();
@@ -35,15 +35,10 @@ namespace Game
 
             for (int i = 0; i<Enem.Length; i++)
                     Enem[i] = new Enemigos();
-                    
-    
             for (int i = 0; i<Enem.Length; i++)
                 Enem[i].Start(G.Next(1, 120), G.Next(1, 30), en);
-            
-
             for (int i = 0; i<Obst.Length; i++)
                 Obst[i] = new Obstaculo();
-            
             for (int i = 0; i<Obst.Length; i++)
                 Obst[i].Start(G.Next(1, 120), G.Next(1, 30), obs);
            }
@@ -103,7 +98,7 @@ namespace Game
                             for (int i = 0; i < Enem.Length; i++)
                             {
 
-                                Enem[i].MoveLeft();
+                                Enem[i].Movement();
                                 Enem[i].Show();
 
                             }
@@ -194,7 +189,7 @@ namespace Game
                             for (int i = 0; i < Enem.Length; i++)
                             {
 
-                                Enem[i].MoveLeft();
+                                Enem[i].Movement();
                                 Enem[i].Show();
 
                             }
