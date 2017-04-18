@@ -18,12 +18,12 @@ namespace Game
         private Personaje player1 = new Personaje();
         private Personaje player2 = new Personaje();
         private Enemigos[] Enem = new Enemigos[10];
-        private Obstaculo[] Obst = new Obstaculo[20];
+        private Obstaculo[] Obst = new Obstaculo[15];
 
         
         public void Iniciar()
         {
-            if (File.Exists("intro.lol") != true)
+            if (File.Exists("intro.txt") != true)
             {
                 Console.SetCursorPosition(30, 8);
                 Console.WriteLine("BIENVENIDO, POR FAVOR ESCRIBIR TU ELECCIÓN Y APRETAR ENTER");
