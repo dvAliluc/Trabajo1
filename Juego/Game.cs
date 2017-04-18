@@ -17,6 +17,7 @@ namespace Game
         private Random G = new Random();
         private Personaje player1 = new Personaje();
         private Personaje player2 = new Personaje();
+        //private Balas[] balas;
         private Enemigos[] Enem = new Enemigos[10];
         private Obstaculo[] Obst = new Obstaculo[15];
 
@@ -81,7 +82,7 @@ namespace Game
                         Console.SetCursorPosition(49, 10);
                         Console.WriteLine("MOVIMIENTO: FLECHAS");
                         Console.SetCursorPosition(35, 12);
-                        Console.WriteLine(" X = PLAYER      ■ = OBSTACULO    < = ENEMIGO");
+                        Console.WriteLine(p1 + " = PLAYER      "+ obs + " = OBSTACULO    "+ en +" = ENEMIGO");
                         Console.SetCursorPosition(44, 14);
                         Console.WriteLine("APRETAR ENTER PARA CONTINUAR");
                         Console.ReadLine();
@@ -103,7 +104,7 @@ namespace Game
 
                             }
                             player1.Show();
-
+                            player1.DibujarVidas();
                             
                             if (Console.KeyAvailable)
                             {
@@ -140,25 +141,40 @@ namespace Game
                             {
                                 if (player1.getPosX() == Obst[i].getPosX() && player1.getPosY() == Obst[i].getPosY())
                                 {
-                                    Console.Clear();
-                                    Console.SetCursorPosition(50, 5);
-                                    Console.WriteLine("GAME OVER\n\n\n(presione enter para continuar)");
-                                    Console.ReadLine();
-                                    startgame = false;
-
+                                    if(player1.getVidas() > 1)
+                                    {
+                                        player1.Start(50, 20, p1);//reinicio posicion
+                                        player1.setVidas(player1.getVidas()-1);
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
+                                        Console.SetCursorPosition(50, 5);
+                                        Console.WriteLine("GAME OVER\n\n\n(presione enter para continuar)");
+                                        Console.ReadLine();
+                                        startgame = false;
+                                        player1.setVidas(3);
+                                    }
                                 }
-
                             }
                             for (int i = 0; i < Enem.Length; i++)
                             {
                                 if (player1.getPosX() == Enem[i].getPosX() && player1.getPosY() == Enem[i].getPosY())
                                 {
-                                    Console.Clear();
-                                    Console.SetCursorPosition(50, 5);
-                                    Console.WriteLine("GAME OVER\n\n\n(presione enter para continuar)");
-                                    Console.ReadLine();
-                                    startgame = false;
-
+                                    if (player1.getVidas() > 1)
+                                    {
+                                        player1.Start(50, 20, p1);//reinicio posicion
+                                        player1.setVidas(player1.getVidas() - 1);
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
+                                        Console.SetCursorPosition(50, 5);
+                                        Console.WriteLine("GAME OVER\n\n\n(presione enter para continuar)");
+                                        Console.ReadLine();
+                                        startgame = false;
+                                        player1.setVidas(3);
+                                    }
                                 }
 
                             }
