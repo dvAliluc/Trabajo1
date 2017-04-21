@@ -16,3 +16,9 @@ C:\Users\Lucas\Desktop\Trabajo1\Juego\obj\Debug\Juego.pdb
 C:\Users\Lucas\Desktop\Trabajo1\Juego\bin\Debug\Juego.exe
 C:\Users\Lucas\Desktop\Trabajo1\Juego\bin\Debug\Juego.pdb
 C:\Users\Lucas\Desktop\Trabajo1\Juego\obj\Debug\Juego.csprojResolveAssemblyReference.cache
+C:\Users\matias\Documents\GitHub\Trabajo1\Juego\bin\Debug\Juego.exe.config
+C:\Users\matias\Documents\GitHub\Trabajo1\Juego\obj\Debug\Juego.exe
+C:\Users\matias\Documents\GitHub\Trabajo1\Juego\obj\Debug\Juego.pdb
+C:\Users\matias\Documents\GitHub\Trabajo1\Juego\bin\Debug\Juego.exe
+C:\Users\matias\Documents\GitHub\Trabajo1\Juego\bin\Debug\Juego.pdb
+C:\Users\matias\Documents\GitHub\Trabajo1\Juego\obj\Debug\Juego.csprojResolveAssemblyReference.cache

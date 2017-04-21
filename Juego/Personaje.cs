@@ -8,7 +8,7 @@ namespace Game
         private int pY;
         private char Char;
         private int vidas = 3;
-        public static int direccion = 2;
+        public  int direccion = 2;
         
         public void Start(int _x , int _y , char pj)
         {
@@ -52,7 +52,7 @@ namespace Game
         }
         public void MoveDown()
         {
-            if (pY != 30)
+            if (pY != 29)
             {
                 pY += 1;
                 direccion = 2;
@@ -83,10 +83,10 @@ namespace Game
                     Console.Write("♥");
                     break;
                 case 2:
-                    Console.Write("♥"+"♥");
+                    Console.Write("♥♥");
                     break;
                 case 3:
-                    Console.Write("♥"+"♥"+"♥");
+                    Console.Write("♥♥♥");
                     break;
             }
         }

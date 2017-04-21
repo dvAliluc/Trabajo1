@@ -6,8 +6,6 @@ namespace Game
     {
 
         
-
-        
         private bool startgame = true;
         private int e = 1;
         private char p1 = 'O', p2 = 'Y', obs = '■', en = 'M';   
@@ -17,13 +15,15 @@ namespace Game
         private Random G = new Random();
         private Personaje player1 = new Personaje();
         private Personaje player2 = new Personaje();
-        //private Balas[] balas;
+        private Bala[] bullet = new Bala[1];
         private Enemigos[] Enem = new Enemigos[10];
         private Obstaculo[] Obst = new Obstaculo[15];
 
         
         public void Iniciar()
         {
+            Console.SetBufferSize(121, 30);
+
             if (File.Exists("intro.txt") != true)
             {
                 Console.SetCursorPosition(30, 8);
@@ -49,7 +49,6 @@ namespace Game
                 Console.SetCursorPosition(35, 12);
             Console.WriteLine("[1] EMPEZAR JUEGO    [2] MULTIPLAYER   [3] EXIT");
                 Console.SetCursorPosition(60, 14);
-                
 
                 try
                 {
@@ -105,6 +104,13 @@ namespace Game
                             }
                             player1.Show();
                             player1.DibujarVidas();
+                            if (bullet[0] != null)
+                            {
+                                if(bullet[0].Movimiento())
+                                {
+                                    bullet[0] = null;
+                                }
+                            }
                             
                             if (Console.KeyAvailable)
                             {
@@ -112,8 +118,7 @@ namespace Game
 
                                 switch (userKey.Key)
                                 {
-
-
+                                    
                                     case ConsoleKey.Backspace:
                                         Console.Clear();
                                         startgame = false;
@@ -134,6 +139,10 @@ namespace Game
                                         break;
                                     case ConsoleKey.LeftArrow:
                                         player1.MoveLeft();
+                                        break;
+                                    case ConsoleKey.Spacebar://Disparo de bala
+                                        if(bullet[0] == null)
+                                            bullet[0] = new Bala(player1.getPosX(),player1.getPosY(), player1.direccion);
                                         break;
                                 }
                             }
